@@ -32,7 +32,7 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a, b) { //eslint-disable-line
   var answer = a * b;
   var message = 'The product of ' + a + ' and ' + b + ' is ' + answer + '.';
-  return[answer, message];
+  return [answer, message];
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -50,11 +50,19 @@ his function by hand in the console to get it working, and when you think it is 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  
+  var answer = [];
+  answer.push(sum(a, b)[0]);
+  answer.push(sum(answer.pop(), c)[0]);
+ 
+  answer.push(multiply(a, b)[0]);
+  answer.push(multiply(answer.pop(), c)[0]);
+  answer.push(a + ' and ' + b + ' and ' + c + ' sum to ' + answer[0] + '.');
+  answer.push('The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + answer[1]+ '.');
+  return answer;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -91,7 +99,7 @@ function multiplyArray(multArr) { //eslint-disable-line
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyArray(testArray);
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
+// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 // You're done! Submit the link to the repo following the instructions in Canvas. Or, try out the stretch goal below...
 // Don't forget to create a new branch for your work on the next question, if you attempt it.
 
@@ -113,5 +121,5 @@ function multiplyAnyArray(dynamicArray) { //eslint-disable-line
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyAnyArray(testDynamicArray);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link 
+// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link
 //to the repo following the instructions in canvas
