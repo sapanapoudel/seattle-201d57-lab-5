@@ -53,16 +53,16 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
   var answer = [];
   answer.push(sum(a, b)[0]);
   answer.push(sum(answer.pop(), c)[0]);
- 
+
   answer.push(multiply(a, b)[0]);
   answer.push(multiply(answer.pop(), c)[0]);
   answer.push(a + ' and ' + b + ' and ' + c + ' sum to ' + answer[0] + '.');
-  answer.push('The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + answer[1]+ '.');
+  answer.push('The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + answer[1] + '.');
   return answer;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-testSumAndMultiply(4,7,5);
+testSumAndMultiply(4, 7, 5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -79,11 +79,11 @@ var testArray = [2, 3, 4]; //eslint-disable-line
 function sumArray(sumArr) {
   var answer = [0]; //eslint-disable-line
   var string = '';
-  for (var i = 0; i < testArray.length; i++){
+  for (var i = 0; i < testArray.length; i++) {
     answer.push(sum(answer.pop(), testArray[i])[0]);
-    string += testArray[i]+ ',';
+    string += testArray[i] + ',';
   }
-  string = string.substr(0, string.length-1);
+  string = string.substr(0, string.length - 1);
   answer.push(string + ' was passed in as an array of numbers, and ' + answer + ' is their sum.');
   return answer;
 
@@ -104,7 +104,7 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-  
+
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
