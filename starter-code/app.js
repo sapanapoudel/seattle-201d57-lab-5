@@ -10,10 +10,12 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-  var total = a + b;
+  var result = [];
+  var add= a + b;
   var message = 'The sum of ' + a + ' and ' + b + ' is ' + total + '.';
-
-  return [total, message];
+  result.push(add);
+  result.push(message);
+  return result;
 }
 //Here is the test for sum(); uncomment it to run it
 // eslint-disable-next-line no-undef
@@ -30,11 +32,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-  var answer = a * b;
-  var message = 'The product of ' + a + ' and ' + b + ' is ' + answer + '.';
-  return [answer, message];
-}
+  var ans = [];
+  var product= a * b;
+  var message = 'The product of ' + a + ' and ' + b + ' is ' + product + '.';
+  ans.push(product);
+  ans.push(message);
 
+  return ans;
+}
 // Here is the test for multiply(); uncomment it to run it
 testMultiply(5, 9);
 
