@@ -12,7 +12,7 @@ Test this function by hand in the console to get it working, and when you think 
 function sum(a, b) { //eslint-disable-line
   var result = [];
   var add= a + b;
-  var message = 'The sum of ' + a + ' and ' + b + ' is ' + total + '.';
+  var message = 'The sum of ' + a + ' and ' + b + ' is ' + add+ '.';
   result.push(add);
   result.push(message);
   return result;
