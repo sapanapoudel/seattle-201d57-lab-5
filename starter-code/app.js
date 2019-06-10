@@ -10,13 +10,12 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-  console.log('a : ' + a);
-  console.log('b : ' + b);
-
-  var total = a + b;
+  var result = [];
+  var add= a + b;
   var message = 'The sum of ' + a + ' and ' + b + ' is ' + total + '.';
-
-  return [total, message];
+  result.push(add);
+  result.push(message);
+  return result;
 }
 //Here is the test for sum(); uncomment it to run it
 // eslint-disable-next-line no-undef
@@ -41,7 +40,6 @@ function multiply(a, b) { //eslint-disable-line
 
   return ans;
 }
-
 // Here is the test for multiply(); uncomment it to run it
 testMultiply(5, 9);
 
@@ -57,11 +55,19 @@ his function by hand in the console to get it working, and when you think it is 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  
+  var answer = [];
+  answer.push(sum(a, b)[0]);
+  answer.push(sum(answer.pop(), c)[0]);
+
+  answer.push(multiply(a, b)[0]);
+  answer.push(multiply(answer.pop(), c)[0]);
+  answer.push(a + ' and ' + b + ' and ' + c + ' sum to ' + answer[0] + '.');
+  answer.push('The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + answer[1] + '.');
+  return answer;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4, 7, 5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -74,13 +80,23 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 var testArray = [2, 3, 4]; //eslint-disable-line
 
-function sumArray(sumArr) { //eslint-disable-line
+// eslint-disable-next-line no-unused-vars
+function sumArray(sumArr) {
+  var answer = [0]; //eslint-disable-line
+  var string = '';
+  for (var i = 0; i < testArray.length; i++) {
+    answer.push(sum(answer.pop(), testArray[i])[0]);
+    string += testArray[i] + ',';
+  }
+  string = string.substr(0, string.length - 1);
+  answer.push(string + ' was passed in as an array of numbers, and ' + answer + ' is their sum.');
+  return answer;
 
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -93,12 +109,21 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+  var answer = [1];
+  var string = '';
+  for (var i = 0; i < testArray.length; i++) {
+    answer.push(multiply(answer.pop(), testArray[i])[0]);
+    string += testArray[i] + ',';
+  }
+  string = string.substr(0, string.length - 1);
+  answer.push('The numbers ' + string + ' have a product of ' + answer[0] + '.');
+  return answer;
 
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
+testMultiplyArray(testArray);
+// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 // You're done! Submit the link to the repo following the instructions in Canvas. Or, try out the stretch goal below...
 // Don't forget to create a new branch for your work on the next question, if you attempt it.
 
@@ -120,5 +145,5 @@ function multiplyAnyArray(dynamicArray) { //eslint-disable-line
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyAnyArray(testDynamicArray);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link 
+// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link
 //to the repo following the instructions in canvas
